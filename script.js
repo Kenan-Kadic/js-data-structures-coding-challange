@@ -40,6 +40,24 @@ const game = {
   },
 };
 
+// HOW TO DO A For of LOOP
+// this saves you time and saves you from having to do that regular for loop
+const array = [1, 2, 3, 4, 5]
+for(const item of array) console.log(item);
+// you can still use keywords continue and break here
+
+// how do you get the index
+for(const item of array.entries()) console.log(item);
+console.log(...array.entries())
+
+// this entries is an array inside of an array that holds the index numbers
+// how do you get that out?
+
+for (const [i, el] of array.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+
 //task 1 create one player array for each team
 const players1 = [...game.players[0]]
 const players2 = [...game.players[1]]
