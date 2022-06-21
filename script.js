@@ -97,6 +97,32 @@ const game = {
 //   team1 < team2 && console.log('Team 1 is more likely to win');
 //   team2 > team2 && console.log('Team 2 is more likely to win');
 
+// IN ARRAYS you use the ENTRIES METHOD to get the entries of the array
+// IN OBJECTS you have to use object.entries and then pass in () the object you are
+// interested in
+
+let text = '';
+let array = ['a','b','c','d'];
+for (const x of array.entries()) {
+  console.log(x)
+  }
+
+// REMEMBER THAT .entries was designed to allow people to use a For of LOOP but still
+// have access to the indexes which you get with a regular for loop that uses the i
+
+// FOR AN OBJECT PRACTICE
+
+// let objectOne = {
+//   name: 'Kenan',
+//   state: 'MO',
+//   age: 38
+// }
+//
+// let theEntries = Object.entries(objectOne)
+//
+// for (const i of theEntries) {
+//   console.log(i)
+// }
 
 // --- CHALLANGE TWO ---
 
@@ -113,7 +139,15 @@ let odds = Object.values(game.odds)
 for(const odd of odds)
   average+= odd;
 // the average formula
-average /= odds;
+average /= odds.length;
 console.log(average);
 
-// 3.
+// 3. print the content of the odds object to the console
+let content = Object.entries(game.odds);
+
+for (const [team, odd] of content) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+
+console.log(`Odd of ${teamStr} ${odd}`);
+}
+
